@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.shsc.framework</groupId>
+        <artifactId>shsc-framework-starters</artifactId>
+        <version>2.0.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.shsc.basic</groupId>
+	<artifactId>shsc-basic-goods-retrieve</artifactId>
+	<name>goods-retrieve</name>
+	<description>goods-retrieve project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <sentinel.version>1.6.3</sentinel.version>
+        <guava.version>27.0.1-jre</guava.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>com.shsc.framework</groupId>
+            <artifactId>shsc-framework</artifactId>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.springframework.boot</groupId>
+               		<artifactId>spring-boot-starter-web</artifactId>
+            	</exclusion>
+            </exclusions>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+		    </exclusions>
+        </dependency>
+
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		 <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-parameter-flow-control</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+        <dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-transport-netty-http</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-datasource-extension</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-datasource-redis</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-core</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba.csp</groupId>
+		    <artifactId>sentinel-annotation-aspectj</artifactId>
+		    <version>${sentinel.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
